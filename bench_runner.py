@@ -180,6 +180,7 @@ def main():
     rust = Program(
         name="rust",
         workdir=repo_root / "fft" / "rs",
+        # force set target-dir to avoid custom build.target-dir in user environment
         build_cmd=["cargo", "build", "--release", "--target-dir", "target"],
         exe_path=Path("target") / "release" / "main",
     )
